@@ -1,0 +1,94 @@
+:root {
+  --board-size: 600px;
+  --margin: 10px;
+  --radius: 7px;
+  --color: #ccc1b5;
+}
+
+/* Base Body */
+body {
+  background-color: rgb(250, 248, 240);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Board Container */
+#board {
+  width: var(--board-size);
+  height: var(--board-size);
+  background-color: rgb(186, 173, 161);
+  border-radius: var(--radius);
+  flex-wrap: wrap;
+  padding: var(--margin);
+}
+
+/* Individual Cells */
+.cell {
+  width: calc(var(--board-size) / 4 - var(--margin)*2);
+  height: calc(var(--board-size) / 4 - var(--margin)*2);
+  margin: var(--margin);
+  background-color: var(--color);
+  border-radius: var(--radius);
+  text-align: center;
+  align-content: center;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Smooth color transitions */
+  transition: background-color 0.15s ease;
+}
+
+/* Flex Containers */
+.container {
+  display: flex;
+}
+
+#center-board {
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Headings */
+#gamename {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#gameinfo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Combine “pop” animation */
+@keyframes combine-pop {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.combine-animation {
+  animation: combine-pop 0.2s ease-in-out;
+}
+
+/* Tile spawn “pop-in” animation */
+@keyframes tile-spawn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.spawn-animation {
+  animation: tile-spawn 0.2s ease-out;
+}
